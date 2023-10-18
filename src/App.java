@@ -1,4 +1,5 @@
 import java.io.Console;
+import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -6,8 +7,16 @@ public class App {
 
         Console cons = System.console();
 
-        String name = cons.readLine("What is your name?");
+        ArrayList<String> shoppingCart = new ArrayList<>();
 
-        System.out.printf("Hello %s. Pleased to meet you.\n", name);
+        // When taking the user's input, need to be able to distinguish between the command and the items.
+        // Might need to separate based on the space.
+        String input = cons.readLine();
+
+
+
+
     }
+
+    
 }
