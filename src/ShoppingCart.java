@@ -13,9 +13,14 @@ public class ShoppingCart {
     return this.cart.get(itemPosition - 1);
   }
 
+  // Returns the size of the shopping cart.
+  public int getSize() {
+    return this.cart.size();
+  }
+
   // Adding item to shopping cart.
   public void addItem(String item) {
-    String updatedItem = item.replace(",", ""); // Removes the commas.
+    String updatedItem = item.replace(",", "").toLowerCase(); // Removes the commas and implements case insensitivity.
     if (cart.contains(updatedItem)) {
       System.out.printf("You already have %s in your cart\n", updatedItem);
     } else {
@@ -26,11 +31,8 @@ public class ShoppingCart {
 
   // Deletes item based on its position on the list.
   public void deleteItem(int itemPosition) {
-    if (itemPosition > cart.size() || itemPosition == 0) {
-      System.out.printf("Incorrect item index\n");
-    } else {
-      cart.remove(itemPosition - 1);
-    }
+    cart.remove(itemPosition - 1);
+    
   }
 
   // Listing contents of shopping cart.
