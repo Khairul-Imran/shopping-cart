@@ -21,7 +21,7 @@ public class ShoppingCart {
 
   // Removes item based on it's position on the list.
   public void removeItem(int itemPosition) {
-    if (itemPosition > cart.size()) {
+    if (itemPosition > cart.size() || itemPosition == 0) {
       System.out.printf("Incorrect item index");
     } else {
       cart.remove(itemPosition - 1);
