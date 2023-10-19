@@ -8,13 +8,15 @@ public class ShoppingCart {
   }
 
   // Adding item to shopping cart.
-  // Don't allow duplicate items. Print appropriate response for duplicates.
-  // Also need to allow multiple items adding in.
+  // Also need to allow multiple unique items adding in at the same time.
   public void addItem(String item) {
     if (cart.contains(item)) {
       System.out.printf("You already have %s in your cart", item);
+    } else {
+      cart.add(item);
+      System.out.printf("%s added to cart", item);
     }
-    cart.add(item);
+    
   }
 
   // Removes item based on it's position on the list.
