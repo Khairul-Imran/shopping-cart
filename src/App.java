@@ -6,47 +6,51 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to your shopping cart");
 
-        // Console cons = System.console();
         Scanner scanner = new Scanner(System.in);
-
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        //String input = cons.readLine();
-        String input = scanner.nextLine();
+        while (true) {
+            String input = scanner.nextLine();
 
-        String[] inputParts = input.split(" ");
+            // Splitting the user's input.
+            String[] inputParts = input.split(" ");
 
-        String userCommand = inputParts[0].toLowerCase();
-        int itemPosition = 0;
-        int numberOfItems = 0; // Might be unnecessary. 
+            // Identifying the command given.
+            String userCommand = inputParts[0].toLowerCase();
 
-        if (inputParts.length > 1 && userCommand.equals("delete")) { // When the command is delete.
-            itemPosition = Integer.parseInt(inputParts[1]);
-        } else if (inputParts.length > 1 && userCommand.equals("add")) { // When the command is add.
-            numberOfItems = inputParts.length - 1; // This too 
-        }
+            // inputParts were stored as Strings, so here we convert them to ints for our delete method to work.
+            int itemPosition = 0;
+            if (inputParts.length > 1 && userCommand.equals("delete")) {
+                itemPosition = Integer.parseInt(inputParts[1]);
+            }
 
-
-        switch (userCommand) {
-            // to put the different cases
-            case "add" -> {
-                for (int i = 1; i < inputParts.length; i ++) {
-                    shoppingCart.addItem(inputParts[i]);
+            switch (userCommand) {
+                case "add" -> {
+                    for (int i = 1; i < inputParts.length; i ++) {
+                        shoppingCart.addItem(inputParts[i]);
+                    }
+                }
+                case "delete" -> {
+                    if (inputParts.length != 2) {
+                        System.out.printf("Invalid input\n");
+                    } else {
+                        String itemToRemove = shoppingCart.getItem(itemPosition);
+                        shoppingCart.deleteItem(itemPosition);
+                        System.out.printf("%s removed from cart\n", itemToRemove);
+                    }
+                }
+                case "list" -> {
+                    shoppingCart.listItems();
+                }
+                case "stop" -> {
+                    System.out.printf("Shopping cart is closed");
+                    break;
                 }
             }
-            case "delete" -> {
-                if (inputParts.length != 2) {
-                    System.out.printf("Invalid input");
-                } else {
-                    shoppingCart.removeItem(itemPosition);
-                }
-            }
-            case "list" -> {
-                shoppingCart.listItems();
-            }
-        }
 
+            // scanner.close();
+        }
+        
         // Consider adding an "end" command.
-        scanner.close();
     }
 }
