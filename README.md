@@ -1,19 +1,79 @@
+# Shopping Cart Application
+
+Welcome to the Shopping Cart Application! This console-based program allows you to manage your shopping cart by adding, deleting, and listing items.
+
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Commands](#commands)
+- [Examples](#examples)
+
+## Features
+
+- Add items to your shopping cart.
+- Delete items from your shopping cart.
+- List the contents of your shopping cart.
+- Close the shopping cart with the "stop" command.
+
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+### Prerequisites
 
-## Folder Structure
+- Java Development Kit (JDK) installed on your computer.
 
-The workspace contains two folders by default, where:
+### Installation
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+1. Clone this repository or download the source code.
+2. Compile the Java source code.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+```shell
+javac App.java ShoppingCart.java
+```
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+3. Run the program.
 
-## Dependency Management
+```shell
+java App
+```
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-# shopping-cart
+## Usage
+
+1. Launch the program.
+2. Enter commands to interact with your shopping cart.
+
+## Commands
+
+- `add <item1>, <item2>, ...` - Add items to your shopping cart (items have to be separated by a comma).
+- `delete <position>` - Delete an item from your shopping cart by specifying its position on the list.
+- `list` - List the contents of your shopping cart.
+- `stop` - Close the shopping cart and exit the program.
+
+## Examples
+
+- Add items to the cart:
+
+```shell
+add apple, banana, orange
+```
+
+- Delete an item from the cart (replace `<position>` with the actual item position):
+
+```shell
+delete 2
+```
+
+- List the contents of the cart:
+
+```shell
+list
+```
+
+- Close the shopping cart and exit the program:
+
+```shell
+stop
+```
+
+---
