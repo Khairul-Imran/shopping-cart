@@ -22,7 +22,7 @@ public class App {
                 itemPosition = Integer.parseInt(inputParts[1]);
             }
 
-            switch (userCommand) { // Need to try put breaks at the end of each case.
+            switch (userCommand) { // Need to try put breaks at the end of each case. Also follow normal conventions.
                 case "add" -> {
                     for (int i = 1; i < inputParts.length; i ++) {
                         shoppingCart.addItem(inputParts[i]);

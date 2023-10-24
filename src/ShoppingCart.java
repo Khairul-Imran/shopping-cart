@@ -20,7 +20,7 @@ public class ShoppingCart {
 
   // Adding item to shopping cart.
   public void addItem(String item) {
-    String updatedItem = item.replace(",", "").toLowerCase(); // Removes the commas and implements case insensitivity.
+    String updatedItem = item.replace(",", "").toLowerCase(); // Removes the commas and implements case insensitivity. NEED TO TRY USING TRIM TO GET THIS DONE.
     if (cart.contains(updatedItem)) {
       System.out.printf("You already have %s in your cart\n", updatedItem);
     } else {
