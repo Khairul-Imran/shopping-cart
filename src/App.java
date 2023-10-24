@@ -1,16 +1,33 @@
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // Storing user's shopping cart details.
-        String cartDirectory;
+        // Finding out what directory to use to store shopping cart.
+        String cartDirectoryName;
         if (args.length > 0) {
-            cartDirectory = args[0];
+            cartDirectoryName = args[0];
         } else {
-            cartDirectory = "db"; // If no directory name was specified by user.
+            cartDirectoryName = "db"; // If no directory name was specified by user.
+        }
+
+        Path cartDirectoryPath = Paths.get(cartDirectoryName);
+        File directory = cartDirectoryPath.toFile();
+
+        if (!directory.exists()) {
+            if (directory.mkdir()) {
+                System.out.println("Using cart directory: " + cartDirectoryPath.toString());
+            } else {
+                System.err.println("Failed to create directory: " + cartDirectoryPath.toString());
+                System.exit(1);
+            }
         }
 
         
+
+
 
         System.out.println("Welcome to your shopping cart");
 
