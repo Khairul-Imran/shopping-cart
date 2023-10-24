@@ -2,6 +2,16 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        // Storing user's shopping cart details.
+        String cartDirectory;
+        if (args.length > 0) {
+            cartDirectory = args[0];
+        } else {
+            cartDirectory = "db"; // If no directory name was specified by user.
+        }
+
+        
+
         System.out.println("Welcome to your shopping cart");
 
         Scanner scanner = new Scanner(System.in);
