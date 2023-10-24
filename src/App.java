@@ -14,7 +14,7 @@ public class App {
             String[] inputParts = input.split(" ");
 
             // Identifying the command given.
-            String userCommand = inputParts[0].toLowerCase();
+            String userCommand = inputParts[0].toLowerCase(); // use scanner.next(), and scanner.nextLine() for this. Refer to slides.
 
             // inputParts were stored as Strings, now we convert the relevant input into ints for our delete method.
             int itemPosition = 0;
@@ -22,7 +22,7 @@ public class App {
                 itemPosition = Integer.parseInt(inputParts[1]);
             }
 
-            switch (userCommand) { // Need to try put breaks at the end of each case. Also follow normal conventions.
+            switch (userCommand) { // Need to try put breaks at the end of each case. Also follow normal conventions. Try to simplify the program.
                 case "add" -> {
                     for (int i = 1; i < inputParts.length; i ++) {
                         shoppingCart.addItem(inputParts[i]);
