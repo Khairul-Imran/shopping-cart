@@ -24,8 +24,8 @@ public class App {
                 System.exit(1);
             }
         }
+        // Watch the vids to understand better.
 
-        
 
 
 
