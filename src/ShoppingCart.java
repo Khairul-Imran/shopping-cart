@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class ShoppingCart {
-  private ArrayList<String> cart;
+  private List<String> cart; // Changed from ArrayList.
 
   // Constructor.
   public ShoppingCart() {

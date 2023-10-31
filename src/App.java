@@ -4,6 +4,7 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class App {
+
     public static void main(String[] args) throws Exception {
         // Finding out what directory to use to store shopping cart.
         String cartDirectoryName;
